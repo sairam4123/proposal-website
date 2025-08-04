@@ -118,7 +118,7 @@ export default function Home() {
       </main>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
         <div className="text-5xl font-bold">
-          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I asked you many times but you declined."]} />
+          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I wanted to celebrate your birthday with you!"]} />
         </div>
         <ScrollIndicator />
       </main>

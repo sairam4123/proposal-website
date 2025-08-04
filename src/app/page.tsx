@@ -120,10 +120,9 @@ export default function Home() {
         <div className="text-5xl font-bold">
           <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I wanted to celebrate your birthday with you!"]} />
         </div>
-        <ScrollIndicator />
       </main>
-      <footer className="flex text-center text-balance items-center justify-center w-full h-24 border-t">
-        <p> Made with ❤️ by Sairam Mangeshkar for Priya Dharshini. </p>
+      <footer className="flex text-center text-xl text-balance items-center justify-center w-full h-24 mb-2 snap-start">
+        <p> Made with ❤️ by Sairam Mangeshkar for Priya Dharshini</p>
       </footer>
     </div>
   );

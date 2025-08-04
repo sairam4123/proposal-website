@@ -1,102 +1,129 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import { TypeOnView } from "../@components/TypeOnView";
+import ReactConfetti from "react-confetti";
+import ScrollIndicator from "@/@components/ScrollIndicator";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const [sheClickedYes, setSheClickedYes] = useState(false);
+  const [sheClickedNo, setSheClickedNo] = useState(false);
+
+  const handleYesClick = () => {
+    setSheClickedYes(true);
+    document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleNoClick = () => {
+    setSheClickedNo(true);
+    document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="font-sans flex flex-col items-center justify-between bg-gradient-to-br from-rose-400 to-pink-500 text-white scroll-smooth snap-y snap-mandatory overflow-y-scroll h-screen">
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I want to tell you something..." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I have been waiting to tell you this..." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I have a secret..." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I think you should know..." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I found something in you that I cherish deeply." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="You created a spark in me." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="You are the reason I smile." />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text={["I want to be with you.", "Forever and ever!"]} />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="I love you Priya!" />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="Do you love me?" />
+        </div>
+        <div className="flex flex-row gap-2 ">
+          <button
+            className="mt-4 px-6 py-2 bg-white text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
+            onClick={handleYesClick}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Yes, I do!
+          </button>
+          <button
+            className="mt-4 px-6 py-2 bg-white text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
+            onClick={handleNoClick}
           >
-            Read our docs
-          </a>
+            No, I don't!
+        </button>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <main id="yesResponse" className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        
+      {sheClickedYes && (
+          <>
+          <div className="mt-4 text-3xl font-bold">
+            <TypeOnView loop={10} text={["Yay! I love you too!", "I love you so much!!"]} />
+          </div>
+          <ReactConfetti />
+          </>
+        )}
+        {sheClickedNo && (
+          <div className="mt-4 text-3xl font-bold">
+            <TypeOnView text={["Oh no! That's sad, but I respect your feelings.", "I made a mistake. Please forgive me."]} />
+          </div>
+        )}
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text="Thank you for being you!" />
+          </div>
+        <ScrollIndicator />
+      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+        <div className="text-5xl font-bold">
+          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!"]} />
+        </div>
+        <ScrollIndicator />
+      </main>
+      <footer className="flex text-center text-balance items-center justify-center w-full h-24 border-t">
+        <p> Made with ❤️ by Sairam Mangeshkar for Priya Dharshini. </p>
       </footer>
     </div>
   );

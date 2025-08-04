@@ -110,19 +110,19 @@ export default function Home() {
           </div>
         )}
       </main>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+      {sheClickedNo && <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
         <div className="text-5xl font-bold">
           <TypeOnView text="Thank you for being you!" />
           </div>
         <ScrollIndicator />
-      </main>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+      </main>}
+      {sheClickedYes && <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
         <div className="text-5xl font-bold">
           <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I wanted to celebrate your birthday with you!"]} />
         </div>
-      </main>
+      </main>}
       <footer className="flex text-center text-xl text-balance items-center justify-center w-full h-24 mb-2 snap-start">
-        <p> Made with ❤️ by Sairam Mangeshkar for Priya Dharshini</p>
+        <p> Made with ❤️ for Priya Dharshini by Sairam Mangeshkar </p>
       </footer>
     </div>
   );

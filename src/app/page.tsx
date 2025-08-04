@@ -90,7 +90,7 @@ export default function Home() {
             className="mt-4 px-6 py-2 bg-white text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
             onClick={handleNoClick}
           >
-            No, I don't!
+            No, I don&apos;t!
         </button>
         </div>
       </main>
@@ -118,7 +118,7 @@ export default function Home() {
       </main>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
         <div className="text-5xl font-bold">
-          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!"]} />
+          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I asked you many times but you declined."]} />
         </div>
         <ScrollIndicator />
       </main>

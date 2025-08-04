@@ -10,7 +10,7 @@ export function TypeOnView({ text, loop }: { text: string | string[]; loop?: num
 
   return (
     <div ref={ref}>
-      <p className="text-4xl lg:text-5xl font-bold">
+      <p className="text-3xl lg:text-5xl text-balance font-bold">
         {inView && (
           <Typewriter
             words={Array.isArray(text) ? text : [text]}

@@ -11,11 +11,13 @@ export default function Home() {
 
   const handleYesClick = () => {
     setSheClickedYes(true);
+    setSheClickedNo(false);
     document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleNoClick = () => {
     setSheClickedNo(true);
+    setSheClickedYes(false);
     document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
   };
 

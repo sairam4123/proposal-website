@@ -13,7 +13,7 @@ export default function ScrollIndicator() {
     <div ref={ref}>
       {inView && (
         <motion.div
-          className="absolute bottom-4"
+          className="absolute bottom-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}

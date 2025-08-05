@@ -3,22 +3,26 @@ import { useState } from "react";
 import { TypeOnView } from "../@components/TypeOnView";
 import ReactConfetti from "react-confetti";
 import ScrollIndicator from "@/@components/ScrollIndicator";
+import Confetti from "@/@components/Confetti";
 
 export default function Home() {
-
   const [sheClickedYes, setSheClickedYes] = useState(false);
   const [sheClickedNo, setSheClickedNo] = useState(false);
 
   const handleYesClick = () => {
     setSheClickedYes(true);
     setSheClickedNo(false);
-    document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("yesResponse")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleNoClick = () => {
     setSheClickedNo(true);
     setSheClickedYes(false);
-    document.getElementById("yesResponse")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("yesResponse")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -72,8 +76,8 @@ export default function Home() {
         <ScrollIndicator />
       </main>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
-        <div className="text-5xl font-bold">
-          <TypeOnView text="I love you Priya!" />
+        <div className="text-6xl font-bold">
+          <TypeOnView text="I ❤️ you Priya!" className="text-5xl" />
         </div>
         <ScrollIndicator />
       </main>
@@ -83,46 +87,97 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-2 ">
           <button
-            className="mt-4 px-6 py-2 bg-white text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
+            className="mt-4 px-6 py-2 bg-white text-nowrap text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
             onClick={handleYesClick}
           >
             Yes, I do!
           </button>
           <button
-            className="mt-4 px-6 py-2 bg-white text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
+            className="mt-4 px-6 py-2 bg-white text-nowrap text-pink-500 rounded-lg hover:bg-gray-200 transition-colors"
             onClick={handleNoClick}
           >
             No, I don&apos;t!
-        </button>
+          </button>
         </div>
       </main>
-      <main id="yesResponse" className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
-        
-      {sheClickedYes && (
+      <main
+        id="yesResponse"
+        className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative"
+      >
+        {sheClickedYes && (
           <>
-          <div className="mt-4 text-3xl font-bold">
-            <TypeOnView loop={10} text={["Yay! I love you too!", "I love you so much!!"]} />
-          </div>
-          <ReactConfetti />
+            <div className="mt-4 text-3xl font-bold">
+              <TypeOnView
+                loop={10}
+                text={["I love you so much!", "I love you to the moon and back!!"]}
+              />
+            </div>
+            <Confetti
+                // colors={['#ff6b81', '#ff4757', '#f368e0', '#e84393']}
+              // drawShape={(ctx) => {
+              //   ctx.beginPath();
+              //   const x = 0;
+              //   const y = 0;
+              //   const size = 0.05; // Smaller value = smaller hearts
+
+              //   ctx.moveTo(x, y);
+              //   ctx.bezierCurveTo(x, y - size, x - size, y - size, x - size, y);
+              //   ctx.bezierCurveTo(
+              //     x - size,
+              //     y + size,
+              //     x,
+              //     y + size * 1.5,
+              //     x,
+              //     y + size * 2
+              //   );
+              //   ctx.bezierCurveTo(
+              //     x,
+              //     y + size * 1.5,
+              //     x + size,
+              //     y + size,
+              //     x + size,
+              //     y
+              //   );
+              //   ctx.bezierCurveTo(x + size, y - size, x, y - size, x, y);
+
+              //   ctx.closePath();
+              //   ctx.fill();
+              // }}
+            />
           </>
         )}
         {sheClickedNo && (
           <div className="mt-4 text-3xl font-bold">
-            <TypeOnView text={["Oh no! That's sad, but I respect your feelings.", "I made a mistake. Please forgive me."]} />
+            <TypeOnView
+              text={[
+                "Oh no! That's sad, but I respect your feelings.",
+                "I made a mistake. Please forgive me.",
+              ]}
+            />
           </div>
         )}
       </main>
-      {sheClickedNo && <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
-        <div className="text-5xl font-bold">
-          <TypeOnView text="Thank you for being you!" />
+      {sheClickedNo && (
+        <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+          <div className="text-5xl font-bold">
+            <TypeOnView text="Thank you for being you!" />
           </div>
-        <ScrollIndicator />
-      </main>}
-      {sheClickedYes && <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
-        <div className="text-5xl font-bold">
-          <TypeOnView text={["I wanted to propose to you in Chennai.", "I wanted to travel in Vande Bharat with you!", "I wanted to celebrate your birthday with you!"]} />
-        </div>
-      </main>}
+          <ScrollIndicator />
+        </main>
+      )}
+      {sheClickedYes && (
+        <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center min-h-screen snap-start relative">
+          <div className="text-5xl font-bold">
+            <TypeOnView
+              text={[
+                "I wanted to propose to you in Chennai.",
+                "I wanted to travel in Vande Bharat with you!",
+                "I wanted to celebrate your birthday with you!",
+              ]}
+            />
+          </div>
+        </main>
+      )}
       <footer className="flex text-center text-xl text-balance items-center justify-center w-full h-24 mb-2 snap-start">
         <p> Made with ❤️ for Priya Dharshini by Sairam Mangeshkar </p>
       </footer>
